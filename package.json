@@ -1,5 +1,6 @@
 {
   "dependencies": {
-    "@heroicons/react": "^2.1.5"
+    "@heroicons/react": "^2.1.5",
+    "clsx": "^2.1.1"
   }
 }
