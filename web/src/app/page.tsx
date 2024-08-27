@@ -9,7 +9,7 @@ export default function Home() {
       <PuzuLogo />
     </div> <br/>
     <p className={`${lusitana.className} text-2xl text-gray-800 md:text-3xl md:leading-normal`}>
-      <strong>Welcome to <a href ="/" className="text-blue-500">Puzu</a> </strong>
+      <strong>Welcome to <a href ="/dashboard" className="text-blue-500">Puzu ! Check your dashboard.</a> </strong>
     </p>
   </main>
   );
