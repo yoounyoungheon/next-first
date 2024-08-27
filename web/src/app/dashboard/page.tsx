@@ -1,28 +1,24 @@
 import { Card } from "../ui/dashboard/cards";
+import RevenueChart from "../ui/dashboard/revenue-chart";
 import { lusitana } from "../ui/fonts";
+import { mockData } from "../lib/mock-data";
 
 export default function Page(){
-  // To-Do: mock-data
-  const mockData = {
-    numberOfInvoices: 1000,
-    numberOfCustomers: 1000,
-    totalPaidInvoices: 1000,
-    totalPendingInvoices: 1000,
-    revenue: 1000
-  };
+  const {totalPaidInvoices, totalPendingInvoices, numberOfInvoices, numberOfCustomers, revenue} = mockData;
   return (
     <main>
       <h1 className={`${lusitana.className} mb-4 text-xl md:text-2xl`} >
         DashBoard
       </h1>
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-        <Card title="Collected" value={mockData.totalPaidInvoices} type="collected" />
-        <Card title="Pending" value={mockData.totalPendingInvoices} type="pending" />
-        <Card title="Total Invoices" value={mockData.numberOfInvoices} type="invoices" />
-        <Card title="Total Customers" value={mockData.numberOfCustomers} type="customers" />
+        <Card title="Collected" value={totalPaidInvoices} type="collected" />
+        <Card title="Pending" value={totalPendingInvoices} type="pending" />
+        <Card title="Total Invoices" value={numberOfInvoices} type="invoices" />
+        <Card title="Total Customers" value={numberOfCustomers} type="customers" />
       </div>
       <div className="mt-6 grid grid-cols-1 gap-6 md:grid-cols-4 lg:grid-cols-8">
-        customer
+        <RevenueChart revenue={revenue}/>
+        
       </div>
     </main>
   );
