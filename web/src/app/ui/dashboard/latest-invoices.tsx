@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { ArrowPathIcon } from "@heroicons/react/24/outline";
 
 export default async function LatestInvoices({latestInvoices}:{latestInvoices:LatestInvoice[]}){
+  console.log(latestInvoices)
   return (
     <div className="flex w-full flex-col md:col-span-4 lg:col-span-4">
       <h2 className={`${lusitana.className} mb-4 text-xl md:text-2xl`}>
@@ -16,11 +17,6 @@ export default async function LatestInvoices({latestInvoices}:{latestInvoices:La
             return(
             <div key={info.id} className={clsx('flex flex-row items-center justify-between py-4', {'border-t': i !==0})}>
               <div className="flex items-center">
-                <Image 
-                src ={info.image_url}
-                alt={`${info.name}'s profile`}
-                className = "mr-4 rounded-full"
-                width={32} height = {32}/>
                 <div className="min-w-0">
                   <p className="truncate text-sm font-semibold md:text-base">
                     {info.name}

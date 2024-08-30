@@ -3,9 +3,14 @@ import RevenueChart from "../ui/dashboard/revenue-chart";
 import { lusitana } from "../ui/fonts";
 import { mockData } from "../lib/mock-data";
 import LatestInvoices from "../ui/dashboard/latest-invoices";
+import { instance } from "../lib/http";
+import * as process from 'process';
 
-export default function Page(){
-  const {totalPaidInvoices, totalPendingInvoices, numberOfInvoices, numberOfCustomers, revenue , latestInvoices} = mockData;
+export default async function Page(){
+  const {totalPaidInvoices, totalPendingInvoices, numberOfInvoices, numberOfCustomers, revenue} = mockData;
+  const response = await instance.get(`${process.env.API_PATH}/mock-data/latest-invoice`);
+  const latestInvoices = response.data;
+
   return (
     <main>
       <h1 className={`${lusitana.className} mb-4 text-xl md:text-2xl`} >
