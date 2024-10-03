@@ -1,7 +1,7 @@
-import { generateYAxis } from "@/app/lib/utils";
+import { generateYAxis } from "@/app/utils/utils";
 import { CalendarIcon } from "@heroicons/react/24/outline";
 import { lusitana } from "../fonts";
-import { Revenue } from "@/app/lib/type-definition";
+import { Revenue } from "@/app/utils/type-definition";
 
 export default async function RevenueChart ({revenue}:{revenue:Revenue[]}){
   const chartHeight = 350;

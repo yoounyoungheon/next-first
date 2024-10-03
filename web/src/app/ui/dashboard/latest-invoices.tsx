@@ -1,4 +1,4 @@
-import { LatestInvoice } from "@/app/lib/type-definition";
+import { LatestInvoice } from "@/app/utils/type-definition";
 import { lusitana } from "../fonts";
 import clsx from "clsx";
 import Image from 'next/image';
